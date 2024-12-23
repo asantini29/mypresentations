@@ -393,6 +393,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
   margin-left: 20px;
 }
 
+.rightheader{
+  text-align: right; 
+  margin-right: 20px;
+}
+
 #logo-container {
   position: fixed; /* Makes it fixed on the screen */
   top: 10px; /* Distance from the top of the screen */
