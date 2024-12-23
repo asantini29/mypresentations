@@ -69,7 +69,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal .slides section,
 .reveal .slides section > section {
-  line-height: 1.3;
+  line-height: 1.4;
   font-weight: inherit;
 }
 
@@ -149,8 +149,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .reveal cite{
-  font-size: 30px;
-  color: beige
+  font-size: 25px;
+  color: lightgrey;
 }
 
 .reveal em {
@@ -368,4 +368,45 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+
+/*********************************************
+ * Custom
+ *********************************************/
+
+ .column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.bright{
+  color: rgb(255, 255, 255);
+}
+
+
+.header{
+  text-align: left; 
+  margin-left: 20px;
+}
+
+#logo-container {
+  position: fixed; /* Makes it fixed on the screen */
+  top: 10px; /* Distance from the top of the screen */
+  right: 10px; /* Distance from the right of the screen */
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+#logo {
+  width: 80px; /* Adjust size as needed */
+  height: auto; /* Keeps the aspect ratio */
+}
+
+/* Hide the logo on the first slide */
+.reveal .slides > section[data-logo="no"] ~ #logo-container,
+.reveal .slides > section:first-of-type ~ #logo-container {
+    display: none;
 }
