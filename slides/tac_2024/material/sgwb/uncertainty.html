@@ -5,9 +5,13 @@
     <h4 class="header">In LISA, not all the noise sources will be known in advance...</h4>
     <h4 class="rightheader">... and we would like to characterize sgwbs of arbitrary spectral shape</h4>
     <p class="fragment">We must be ready to use flexible models to recover the stochastic contributions to the data</p>
-    <p class="fragment">We apply <accent>spline perturbations</accent> to baseline templates...</p>
-    <p class="fragment">... and infer the parameters of both at the same time</p>
-    <p class="fragment">We use <accent>Reversible Jump</accent> to allow the data to decide how many spline knots are required <cite><code>ERYN</code>: Karnesis:2023ras</cite></p>
+    <p class="fragment"><strong>How do we do it?</strong></p>
+    <ol>
+        <li class="fragment">We assume parametric templates as baselines...</li>
+        <li class="fragment">...apply <accent>spline perturbations</accent> to the baselines...</li>
+        <li class="fragment">... and infer the parameters of both at the same time</li>
+        <li class="fragment">We use <accent>Reversible Jump</accent> to allow the data to decide how many spline knots are required <cite><code>ERYN</code>: Karnesis:2023ras</cite></li>
+    </ol>
 </section>
 <section data-auto-animate>
     plots here
