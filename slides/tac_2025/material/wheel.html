@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Graph</title>
+  <style>
+    body {
+      background-color: transparent;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+    .node {
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .center-node {
+      background-color: #ff5e80;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .mbhb { background-color: #ff8533; top: 10%; left: 50%; transform: translateX(-50%); }
+    .gb { background-color: #4da6ff; top: 30%; right: 5%; }
+    .emri { background-color: #9933ff; bottom: 30%; right: 5%; }
+    .sobhb { background-color: #33cc33; bottom: 10%; left: 50%; transform: translateX(-50%); }
+    .unmodeled { background-color: #ff99cc; bottom: 30%; left: 5%; }
+    .stochastic { background-color: #336699; top: 30%; left: 5%; }
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    path {
+      fill: none;
+      stroke: gray;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="node center-node">Instrument<br>Noise<br>Calibration</div>
+    <div class="node mbhb">MBHB</div>
+    <div class="node gb">GB</div>
+    <div class="node emri">EMRI</div>
+    <div class="node sobhb">SOBHB</div>
+    <div class="node unmodeled">Unmodeled</div>
+    <div class="node stochastic">Stochastic</div>
+    <svg>
+      <!-- Define arrow marker -->
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="gray"></polygon>
+        </marker>
+      </defs>
+      <!-- Arrows -->
+      <path d="M200 50 Q200 130 250 150" />
+      <path d="M250 150 Q300 200 250 250" />
+      <path d="M250 250 Q200 300 150 300" />
+      <path d="M150 300 Q100 200 150 150" />
+      <path d="M150 150 Q150 50 200 50" />
+      <path d="M150 300 Q50 250 150 150" />
+    </svg>
+  </div>
+</body>
+</html>

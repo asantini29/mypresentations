@@ -1,0 +1,85 @@
+<section data-auto-animate>
+    <h2>EMRI search</h2>
+</section>
+<section data-auto-animate>
+    <h4 class="header">Parameter estimation for single emris is reasonably straightforward...</h4>
+    <h4 class="rightheader">... if we know where to start</h4>
+    <div style="display: flex; justify-content: space-around;">
+        <p>
+            <ul>
+                <li><strong>Huge parameter space</strong>, with many <accent>secondary</accent> peaks. We must know:</li>
+                <li class="fragment">how to seed the MCMC</li>
+                <li class="fragment">which is the relavant part of the parameter space</li>
+            </ul>
+        </p>
+        <p style="font-size: 20px; float: right; width: 500px;">
+            $$\begin{array}{ccc}
+            \hline
+            \rm Parameter & \qquad & \rm Prior \,\, distribution \\	
+            \hline
+            & & \\
+            \ln M & \qquad & U[(1 - \delta) \cdot \ln {M}, \, (1 + \delta) \cdot \ln {M}] \\
+            \ln \mu & \qquad & U[(1 - \delta) \cdot \ln {\mu}, \, (1 + \delta) \cdot \ln {\mu}] \\
+            a & \qquad & U[(1 - \delta) \cdot {a}, \, (1 + \delta) \cdot {a}] \\
+            p_0 & \qquad & U[(1 - \delta) \cdot {p_0}, \, (1 + \delta) \cdot {p_0}] \\
+            d_L & \qquad & U[0.01, \, 20] \\
+            \cos \theta_S & \qquad & U[-0.99999, \, 0.99999] \\
+            \phi_S & \qquad & U[0, \, 2 \pi] \\
+            \cos \theta_K & \qquad & U[-0.99999, \, 0.99999] \\
+            \phi_K & \qquad & U[0, \, 2 \pi] \\
+            \Phi_{\phi_0} & \qquad & U[0, \, 2 \pi] \\
+            A & \qquad & U[-10^{-3}, \, 10^{-3}] \\
+            n_r & \qquad & U[-10, \, 10] \\
+            M_b & \qquad & U[0.0, \,0.1]\\
+            \hline
+            \end{array}$$
+            <cite>Khalvati:2024tzz</cite>
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h4 class="header">Parameter estimation for single emris is reasonably straightforward...</h4>
+    <h4 class="rightheader">... if we know where to start</h4>
+    <div style="display: flex; justify-content: space-around;">
+        <div style="width: 700px;">
+            <ul>
+                <li><strong>Huge parameter space</strong>, with many <accent>secondary</accent> peaks. We must know:</li>
+                <li>how to seed the MCMC</li>
+                <li>which is the relavant part of the parameter space</li>
+            </ul>
+            \[\begin{align*}
+            \red{\delta} &amp; = 0.01 \\
+            \blue{\bar{X}} &amp; = \text{injected } X \text{ value} \\
+            \end{align*}\]
+        </div>
+        <div style="font-size: 20px; float: right; width: 500px;">
+            $$\begin{array}{ccc}
+            \hline
+            \rm Parameter & \qquad & \rm Prior \,\, distribution \\	
+            \hline
+            & & \\
+            \ln M & \qquad & U[(1 - \red{\delta}) \cdot \ln \blue{\bar{M}}, \, (1 + \red{\delta}) \cdot \ln \blue{\bar{M}}] \\
+            \ln \mu & \qquad & U[(1 - \red{\delta}) \cdot \ln \blue{\bar{\mu}}, \, (1 + \red{\delta}) \cdot \ln \blue{\bar{\mu}}] \\
+            a & \qquad & U[(1 - \red{\delta}) \cdot \blue{\bar{a}}, \, (1 + \red{\delta}) \cdot \blue{\bar{a}}] \\
+            p_0 & \qquad & U[(1 - \red{\delta}) \cdot \blue{\bar{p_0}}, \, (1 + \red{\delta}) \cdot \blue{\bar{p_0}}] \\
+            d_L & \qquad & U[0.01, \, 20] \\
+            \cos \theta_S & \qquad & U[-0.99999, \, 0.99999] \\
+            \phi_S & \qquad & U[0, \, 2 \pi] \\
+            \cos \theta_K & \qquad & U[-0.99999, \, 0.99999] \\
+            \phi_K & \qquad & U[0, \, 2 \pi] \\
+            \Phi_{\phi_0} & \qquad & U[0, \, 2 \pi] \\
+            A & \qquad & U[-10^{-3}, \, 10^{-3}] \\
+            n_r & \qquad & U[-10, \, 10] \\
+            M_b & \qquad & U[0.0, \,0.1]\\
+            \hline
+            \end{array}$$
+            <cite>Khalvati:2024tzz</cite>
+        </div>
+    </div>
+</section>
+<section>
+    <h4 class="header">How do we look for these signals?</h4>
+    <p class="fragment">We <strong>cannot</strong> rely on template banks, as we do for BBHs in LVK <cite>e.g. DalCanton:2017ala</cite></p>
+    <span class="fragment" style="display: inline;">
+        We would need around <span class="fragment highlight-red" style="display: inline;">$10^{30}$</span> templates to cover the parameter space. <cite style="display: inline;">Gair:2006nj</cite>
+    </span>

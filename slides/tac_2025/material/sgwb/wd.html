@@ -1,0 +1,34 @@
+<section data-auto-animate>
+    <h2>Flexible treatment of the galactic foreground</h2>
+</section>
+<section data-auto-animate>
+    <h4 class="header">we will be able to resolve only a fraction of the observable wd binaries...</h4>
+    <h4 class="rightheader">... all the other ones will be seen as a confusion foreground</h4>
+        <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+            <img src="images/foreground.png" alt="foreground" style="width: 500px;">
+            <p style="font-size: 10; margin-left:10px;">
+                \[\begin{aligned}
+                S_{gal}(f) &amp; = \frac{1}{2}\blue{A} f^{-7/3} e^{-(f/\blue{f_1})^{\blue{\alpha}}} \times \\
+                            &amp;\times \left(1 + \tanh\left(\frac{\blue{f_{\rm knee}} - f}{\blue{f_2}}\right)\right) \\ 
+                \end{aligned}\]
+            </p>
+        </div>
+        <cite>Credit: Karnesis:2021tsh</cite>
+</section>
+<section data-auto-animate>
+    <h4 class="header">different binaries population will produce different foreground shapes</h4>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <img src="images/model_comparison.png" alt="foreground" style="width: 500px;">
+        <div class="column">
+            <p> Here we are changing the assumptions about <accent>spins</accent> and <accent>tides</accent> in the WDs population <br> <cite>from Toubiana:2024qxc</cite></p>
+            <p class="fragment">We want to extend our flexible framework also to this case</p>
+        </div>   
+    </div>
+</section>
+<section data-auto-animate>
+    <h4 class="header">Results, issues and next steps</h4>
+    <ul>
+        <li class="fragment">We have to decide how flexible we want to be: <br> <a style="color: lightskyblue">fully generic</a> or <a style="color: rosybrown">physically motivated?</a></li>
+        <li class="fragment">Include in the model <a style="color: lightskyblue">spline perturbations</a> or <a style="color: rosybrown">features</a></li>
+        <li class="fragment">We are currently checking if the underlying signal model and the simulated data are consistent</li>
+    </ul>

@@ -411,7 +411,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 /* Hide the logo on the first slide */
-.reveal .slides > section[data-logo="no"] ~ #logo-container,
+.reveal .slides section[data-logo="no"] ~ #logo-container,
 .reveal .slides > section:first-of-type ~ #logo-container {
     display: none;
 }
