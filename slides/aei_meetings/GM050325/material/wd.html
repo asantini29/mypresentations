@@ -1,0 +1,45 @@
+<section data-auto-animate>
+    <h2>Flexible treatment of the galactic foreground</h2>
+</section>
+<section data-auto-animate>
+    <h4 class="header">we will be able to resolve only a fraction of the observable wd binaries...</h4>
+    <h4 class="rightheader">... all the other ones will be seen as a confusion foreground</h4>
+        <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+            <img src="images/foreground.png" alt="foreground" style="width: 500px;">
+            <p style="font-size: 10; margin-left:10px;">
+                \[\begin{aligned}
+                S_{gal}(f) &amp; = \frac{1}{2}\blue{A} f^{-7/3} e^{-(f/\blue{f_1})^{\blue{\alpha}}} \times \\
+                            &amp;\times \left(1 + \tanh\left(\frac{\blue{f_{\rm knee}} - f}{\blue{f_2}}\right)\right) \\ 
+                \end{aligned}\]
+            </p>
+        </div>
+        <cite>Credit: Karnesis:2021tsh</cite>
+</section>
+<section data-auto-animate>
+    <h4 class="header">different populations will result in different foreground shapes</h4>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px; margin-right: 0px;">
+        <img src="images/model_comparison.png" alt="foreground" style="width: 500px;">
+        <div class="column">
+            <p> Here we are changing the assumptions about <accent>spins</accent> and <accent>tides</accent> in the WDs population <br> <cite>from Toubiana:2024qxc</cite></p>
+            <!-- <p class="fragment">We want a model flexible enough to capture the features</p> -->
+                <ul class="fragment">
+                    <li>Inform GB priors and proposals 
+                        <br> 
+                        <cite>Korsakova:2024sut</cite>, <cite>Katz:2024oqg</cite>
+                    </li>
+                    <li>population analysis</li>
+                </ul>
+        </div>   
+    </div>
+</section>
+<section data-auto-animate>
+    <h4 class="header">Schematic idea</h4>
+    <ul>
+        <li class="fragment">Generate different Galaxy realizations</li>
+        <li class="fragment">Fit the flexible model for all of them</li>
+        <li class="fragment">We can now produce the PSD for different models</li>
+        <li class="fragment"><accent>SBI!</accent> <span class="fragment"> [<accent>S</accent>imulated <accent>B</accent>lack-magic <accent>I</accent>nference]</span> 
+           <br>
+            <span class="fragment"> Train a network to learn the mapping between PSD and hyperparameters</span> 
+        </li>
+    </ul>
