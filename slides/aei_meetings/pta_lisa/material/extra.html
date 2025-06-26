@@ -1,0 +1,43 @@
+<section data-auto-animate>
+    <h2>Extra</h2>
+</section>
+<section  data-auto-animate>
+    <h4 class="header">stochastic contributions</h4>
+    <div class="r-stack" style="position: relative; justify-content: space-around; align-items: center;">
+        <div class="fragment fade-in-then-out" data-fragment-index="1">
+            After subtracting the resolvable sources:
+            \[\begin{aligned}
+            \mathbf{C}_d(f) &amp; = \left< \boldsymbol{\tilde{\rm d}} \boldsymbol{\tilde{\rm d}}^\dagger \right>(f) \\
+            \mathbf{C}_{d_{ij}}(f) &amp; \propto S_{ij}(f) = S_{n, ij}(f) + S_{h, ij}(f)
+            \end{aligned}\]
+        </div>
+        <div class="fragment fade-in-then-out" data-fragment-index="2">
+            After subtracting the resolvable sources:
+            \[\begin{aligned}
+            \mathbf{C}_d(f) &amp; = \left< \boldsymbol{\tilde{\rm d}} \boldsymbol{\tilde{\rm d}}^\dagger \right>(f) \\
+            \mathbf{C}_{d_{ij}}(f) &amp; \propto S_{ij}(f) = \red{S_{n, ij}(f)} + S_{h, ij(f)}
+            \end{aligned}\]
+            <span style="bottom:700; right: 10; color: red;">Noise</span>
+        </div>
+        <div class="fragment fade-in-then-out" data-fragment-index="3">
+            After subtracting the resolvable sources:
+            \[\begin{aligned}
+            \mathbf{C}_d(f) &amp; = \left< \boldsymbol{\tilde{\rm d}} \boldsymbol{\tilde{\rm d}}^\dagger \right>(f) \\
+            \mathbf{C}_{d_{ij}}(f) &amp; \propto S_{ij}(f) =  S_{n, ij}(f) + \red{S_{h, ij}(f)}
+            \end{aligned}\]
+            <span style="bottom:700; right: 10; color: red">Stochastic background(s)</span>
+        </div>
+    </div>
+</section>
+<section data-auto-animate>
+    <h4 class="header">emris, the state of the art: <code>Fastemriwaveforms</code></h4>
+    <p><code>Fastemriwaveforms</code> (<cite>Katz:2021yft</cite>) is public tool that provides EMRI waveforms on (hundreds of) milliseconds timescales.</p>
+    <div> 
+        Two approaches:
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <p style="color: lightskyblue;">(Post-) adiabatic waveforms in Schwarzschild spacetimes</p>
+            <p style="color: rosybrown;">Kludge waveforms with a 5PN informed trajectory in generic geometries</p>
+        </div>
+    </div>
+    <p><accent>Goal for LISA:</accent> Post adiabatic waveforms in generic Kerr spacetimes</p>
+</section>

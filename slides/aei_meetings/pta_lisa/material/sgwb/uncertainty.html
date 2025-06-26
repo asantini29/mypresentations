@@ -1,0 +1,114 @@
+<section data-auto-animate>
+    <h2>SGWB and noise recovery with flexible models</h2>
+</section>
+<section data-auto-animate>
+    <h4 class="header">In LISA, not all the noise sources will be known in advance...</h4>
+    <h4 class="rightheader">... and we would like to characterize sgwbs of arbitrary spectral shape</h4>
+    <p class="fragment">We must be ready to use flexible models to recover the stochastic contributions to the data</p>
+    <p class="fragment"><strong>How do we do it?</strong></p>
+    <ol>
+        <li class="fragment">We assume parametric templates as baselines...</li>
+        <li class="fragment">.. and apply <accent>spline perturbations</accent> to them </li>
+        <li class="fragment"><accent>Reversible Jump!</accent> <cite><code>ERYN</code>: Karnesis:2023ras</cite></li>
+    </ol>
+</section>
+<section data-auto-animate>
+    <h4>perturbations applied directly at the TDI level</h4>
+</section>
+<section data-auto-animate>
+    <h4>perturbations applied directly at the TDI level</h4>
+    <p>
+        \[
+\begin{align}
+S_{n, ij}(f | \boldsymbol{\theta}_n) &= S_{n, ij}^{\rm template}(f | \boldsymbol{\lambda}_n) \cdot 10^{\mathcal{P}_{n, ij}(f|\boldsymbol{\gamma}_{n, ij})}, \nonumber\\
+\nonumber\\
+%S_{h, ij}(f) &= \sum_{b} S_{b, ij}^{\rm template}(f) \cdot 10^{\mathcal{P}_{b}(f)} \label{eq: sum_b}
+S_{h, ij}(f | \boldsymbol{\theta}_h) &= S_{h, ij}^{\rm template}(f | \boldsymbol{\lambda}_h) \cdot 10^{\mathcal{P}_{h}(f|\boldsymbol{\gamma}_h)}.\nonumber
+\end{align}
+\]
+    </p>
+</section>
+<section data-auto-animate>
+    <h4>perturbations applied directly at the TDI level</h4>
+    <p>
+        \[
+\begin{align}
+S_{n, ij}(f | \boldsymbol{\theta}_n) &= S_{n, ij}^{\rm template}(f | \boldsymbol{\lambda}_n) \cdot 10^{\mathcal{P}_{n, ij}(f|\boldsymbol{\gamma}_{n, ij})}, \nonumber\\
+\nonumber\\
+%S_{h, ij}(f) &= \sum_{b} S_{b, ij}^{\rm template}(f) \cdot 10^{\mathcal{P}_{b}(f)} \label{eq: sum_b}
+S_{h, ij}(f | \boldsymbol{\theta}_h) &= S_{h, ij}^{\rm template}(f | \boldsymbol{\lambda}_h) \cdot 10^{\mathcal{P}_{h}(f|\boldsymbol{\gamma}_h)}.\nonumber
+\end{align}
+\]
+    </p>
+    <p>
+        <ul>
+            <li>$ \boldsymbol{\lambda}$: template parameters</li>
+            <li>$ \boldsymbol{\gamma}$: spline parameters</li>
+        </ul>
+        <br>
+        <br>
+        $\mathcal{P}_\alpha$: realizations of Akima splines
+        <br>
+        <small>[parallelized, gpu implementation at <cite>https://github.com/asantini29/CudAkima</cite>]</small>
+    </p>
+</section>
+
+<section data-auto-animate>
+    <h4 class="header">Example: Noise template</h4>
+    Let's consider the $AET$ TDI combination:
+    \[
+        \mathbf{C}_{AET}(f) = \frac{1}{2}
+        \begin{bmatrix}
+        S_{AA} (f) & 0 & 0 \\
+        0 & S_{EE} (f) & 0 \\
+        0 & 0 & S_{TT} (f) \\
+        \end{bmatrix}
+    \]
+</section>
+<section data-auto-animate>
+    <h4 class="header">Example: Noise template</h4>
+    Let's consider the $AET$ TDI combination with the noise model:
+    \[
+        \begin{align}
+            S_{\rm TM}(f) &= \textcolor{#8250df}{A_{\rm TM}}^2 \left[ 1 + \left( \frac{f_{\rm knee}^{TM}}{f} \right)^2 \right] \left[1 + \left(\frac{f}{8 ~ \rm{mHz}}\right)^4 \right] \nonumber \\
+            S_{\rm OMS}(f)  &= \textcolor{#8250df}{A_{\rm OMS}}^2 \left[ 1 + \left( \frac{f_{\rm knee}^{OMS}}{f} \right)^4 \right] \quad \textcolor{#8250df}{\boldsymbol{\lambda}=\{ A_{\rm{TM}}, \, A_{\rm{OMS}} \}} \nonumber
+        \end{align}
+    \]
+</section>
+<section data-auto-animate>
+    <h4 class="header">Example: Noise template</h4>
+    Let's consider the $AET$ TDI combination with the noise model:
+    <div style="font-size: 0.9em;">
+    \[
+        \begin{align}
+        S_{n, AA}&(f) = S_{n, EE}(f) \nonumber \\
+            &= 32 \sin^2\left( \frac{2 \pi f L}{c} \right) \sin^4\left( \frac{2 \pi f L}{c} \right) \nonumber \\ 
+            &\Bigg\{ \left[2 + \cos \left( \frac{2 \pi f L}{c}\right) \right] \textcolor{#8250df}{S_{\rm OMS}(f)} \nonumber \\
+            &+  4\left[ 1 + \cos\left( \frac{2 \pi f L}{c}\right) + \cos^2\left( \frac{2 \pi f L}{c}\right) \right] \textcolor{#8250df}{S_{\rm TM}(f)}  \Bigg\}, \nonumber
+    \end{align}
+    \]
+    </div>
+</section>
+<section data-auto-animate>
+    <h4 class="header">Noise+Signal reconstruction</h4>
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <img src="images/cs_noise_templates.png" alt="templates" style="width: 500px;">
+        <img src="images/cs_noise_splines.png" alt="splines" style="width: 500px;">
+    </div>
+    <cite>Santini+, in prep</cite>
+</section>
+
+<section data-auto-animate>
+    <h4 class="header"> Perturbed Noise reconstruction</h4>
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <p>
+            Generate a noise realization from a PSD which includes a spline perturbation.
+            <br>
+            <br>
+            Compare the PSD reconstruction with the rigid and flexible models.
+            <br>
+            <cite>Santini+, in prep</cite>
+        </p>
+        <img src="images/noise_splined.png" alt="splines" style="width: 500px;">
+    </div>
+</section>

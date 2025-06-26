@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+		<title>Flexible noise & SGWBs in LISA</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../../../dist/reset.css">
+		<link rel="stylesheet" href="../../../dist/reveal.css">
+		<link rel="stylesheet" href="../../../dist/theme/mymoon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../plugin/highlight/monokai.css">
+
+  </head>
+
+  <body>
+
+	<div id="logo-container">
+		<img src="../../logos/aei/aei_logo.svg" alt="Logo" id="logo">
+	</div>
+
+    <div class="reveal">
+			<div class="slides">
+        <section data-external="material/meta.html" data-logo="no"></section>
+		<section data-external="material/globalfit.html"></section>
+		<section data-external="material/top.html"></section>
+		<section data-external="material/sgwb/uncertainty.html"></section>
+		<section data-external="material/conclusions.html"></section>
+		<!-- <section data-external="material/intro.html"></section>
+		<section data-external="material/globalfit.html"></section>
+        <section data-external="material/sgwb/top.html"></section>
+        <section data-external="material/sgwb/uncertainty.html"></section>
+        <section data-external="material/sgwb/group.html"></section>
+        <section data-external="material/sgwb/wd.html"></section>
+        <section data-external="material/emris/top.html"></section>
+        <section data-external="material/emris/axion.html"></section>
+        <section data-external="material/emris/few.html"></section>
+        <section data-external="material/emris/fom.html"></section>
+        <section data-external="material/emris/search.html"></section>
+		<section data-external="material/conclusions.html"></section>
+		<section data-external="material/extra.html"></section> -->
+			</div>
+		</div>
+
+
+		<script src="../../../dist/reveal.js"></script>
+		<script src="../../../plugin/external/external.js"></script>
+		<script src="../../../plugin/notes/notes.js"></script>
+		<script src="../../../plugin/markdown/markdown.js"></script>
+		<script src="../../../plugin/highlight/highlight.js"></script>
+		<script src="../../../plugin/animate/plugin.js"></script>
+		<script src="../../../plugin/animate/svg.min.js"></script>
+		<script src="../../../plugin/math/math.js"></script>
+    <script src="../../../plugin/zoom/zoom.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealAnimate, RevealMath.KaTeX, RevealMath.MathJax2  ],
+
+				dependencies:[
+					{
+						src: '../../../plugin/external/external.js',
+						condition: function() {
+							return !!document.querySelector( '[data-external],[data-external-replace]' );
+						}
+					},
+				] 
+			});
+    </script>
+	</body>
+</html>
